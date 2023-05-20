@@ -52,6 +52,12 @@ const ClientSchema = new mongoose.Schema({
       return this.departure - this.arrival;
     }
   },
+  passportNumber: {
+    type: String,
+  },
+  dateOfBirth: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model('Client', ClientSchema);;
