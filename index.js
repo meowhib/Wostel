@@ -10,13 +10,13 @@ const port = 3000;
 const uri = "mongodb+srv://wostel:Jveok9CYV7mv7a3h@wostel.am6l9g5.mongodb.net/?retryWrites=true&w=majority";
 
 //Connect to mongodb
-mongoose.connect("mongodb://localhost:27017/wostel", { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.log(err));
-
-// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+// mongoose.connect("mongodb://localhost:27017/wostel", { useNewUrlParser: true, useUnifiedTopology: true })
 // .then(() => console.log('Connected to MongoDB'))
 // .catch(err => console.log(err));
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.log(err));
 
 // Models
 const Client = require('./models/Client');
