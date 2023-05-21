@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add client</title>
+  <title>Edit client</title>
   <link rel="stylesheet" href="/css/output.css" type="text/css">
 </head>
 <body>
   <div class="isolate bg-white px-6 sm:py-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
       <img class="inline-block h-auto w-auto mb-5" src="./images/logo-black.png" alt="">
-      <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Add a new client</h2>
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Edit client</h2>
       <p class="mt-2 text-lg leading-8 text-gray-600"></p>
     </div>
     <form action="/add-client" method="POST" class="mx-auto mt-6 max-w-xl sm:mt-6" enctype="multipart/form-data">
@@ -19,36 +19,36 @@
         <div>
           <label for="firstName" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
           <div class="mt-2.5">
-            <input type="text" name="firstName" id="firstName" autocomplete="given-name" required class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input value="<%= client.firstName %>" type="text" name="firstName" id="firstName" autocomplete="given-name" required class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
         <div>
           <label for="lastName" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
           <div class="mt-2.5">
-            <input type="text" name="lastName" id="lastName" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input value="<%= client.lastName %>" type="text" name="lastName" id="lastName" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
         <div>
           <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
           <div class="mt-2.5">
-            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input value="<%= client.email %>" type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
         <div>
           <label for="phoneNumber" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
           <div class="mt-2.5">
-            <input type="tel" name="phoneNumber" id="phoneNumber" autocomplete="phoneNumber" placeholder="+216 55 132 133" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input value="<%= client.phoneNumber %>" type="tel" name="phoneNumber" id="phoneNumber" autocomplete="phoneNumber" placeholder="+216 55 132 133" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
         <div>
           <label for="passport" class="block text-sm font-semibold leading-6 text-gray-900">Passport</label>
           <div class="mt-2.5">
-            <input type="text" name="passport" id="passport" autocomplete="passport" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input value="<%= client.passport %>" type="text" name="passport" id="passport" autocomplete="passport" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
         <div class="relative max-w-sm">
           <label for="dateOfBirth" class="block text-sm font-medium text-gray-700">Date of birth</label>
-          <input datepicker type="text" name="dateOfBirth" id="dateOfBirth" class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
+          <input value="<%= client.dateOfBirth %>" datepicker type="text" name="dateOfBirth" id="dateOfBirth" class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
         </div>
         <div>
           <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
@@ -72,11 +72,11 @@
         </div>
         <div class="relative max-w-sm">
           <label for="arrivalDate" class="block text-sm font-medium text-gray-700">Arrival</label>
-          <input datepicker type="text" name="arrivalDate" id="arrivalDate" required class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
+          <input value="<%= client.arrivalDate %>" datepicker type="text" name="arrivalDate" id="arrivalDate" required class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
         </div>    
         <div class="relative max-w-sm">
           <label for="departureDate" class="block text-sm font-medium text-gray-700">Departure</label>
-          <input datepicker type="text" name="departureDate" id="departureDate" required class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
+          <input value="<%= client.departureDate %>" datepicker type="text" name="departureDate" id="departureDate" required class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 p-2.5" placeholder="Select date">
         </div> 
         <div class="sm:col-span-2">
           <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price (Per night)</label>
@@ -130,7 +130,9 @@
         <div class="sm:col-span-2">
           <label for="activities" class="text-base font-medium text-gray-900">Activities</label>
           <div class="mt-1">
-            <textarea rows="4" name="activities" id="activities" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+            <textarea rows="4" name="activities" id="activities" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <%= client.activities %>
+            </textarea>
           </div>
         </div>        
         <div class="sm:col-span-2">
