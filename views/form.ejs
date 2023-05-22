@@ -54,12 +54,9 @@
           <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
           <select id="country" name="country" required class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
             <option selected value="" disabled>Select a country</option>
-            <option value="France">France</option>
-            <option value="Australia">Australia</option>
-            <option value="Belgium">Belgium</option>
-            <option value="USA">United States</option>
-            <option value="Canada">Canada</option>
-            <option value="Mexico">Mexico</option>
+            <% for (let country in countries){ %>
+              <option value="<%= countries[country].code %>"><%= countries[country].name %></option>
+            <% } %>
           </select>
         </div>
         <div>

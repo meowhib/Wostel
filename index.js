@@ -18,6 +18,73 @@ mongoose.connect("mongodb://localhost:27017/wostel", { useNewUrlParser: true, us
 // Models
 const Client = require('./models/Client');
 
+const countries = [
+  {
+    name: "France",
+    code: "FR"
+  },
+  {
+    name: "Germany",
+    code: "DE"
+  },
+  {
+    name: "Italy",
+    code: "IT"
+  },
+  {
+    name: "Spain",
+    code: "ES"
+  },
+  {
+    name: "United Kingdom",
+    code: "GB"
+  },
+  {
+    name: "United States",
+    code: "US"
+  },
+  {
+    name: "Australia",
+    code: "AU"
+  },
+  {
+    name: "Canada",
+    code: "CA"
+  },
+  {
+    name: "Portugal",
+    code: "PT"
+  },
+  {
+    name: "Tunisia",
+    code: "TN"
+  },
+  {
+    name: "Algeria",
+    code: "DZ"
+  },
+  {
+    name: "Morocco",
+    code: "MA"
+  },
+  {
+    name: "Egypt",
+    code: "EG"
+  },
+  {
+    name: "Libya",
+    code: "LY"
+  },
+  {
+    name: "Poland",
+    code: "PL"
+  },
+  {
+    name: "Ukraine",
+    code: "UA"
+  },
+]
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -46,7 +113,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/add-client', (req, res) => {
-  res.render('form.ejs');
+  res.render('form.ejs', { countries });
 });
 
 app.get('/edit-client/:id', async (req, res) => {
@@ -54,7 +121,7 @@ app.get('/edit-client/:id', async (req, res) => {
 
   console.log(client);
 
-  res.render('form-edit.ejs', { client });
+  res.render('form-edit.ejs', { client, countries });
 });
 
 app.post('/add-client', upload.single('passportPhoto'), async (req, res) => {
